@@ -329,7 +329,7 @@ extension SZMentionsListener {
         editingMention = false
 
         if let editedMention = mentions.mentionBeingEdited(atRange: range) {
-            if let index = mutableMentions.index(of: editedMention) {
+            if let index = mutableMentions.firstIndex(of: editedMention) {
                 editingMention = true
                 mutableMentions.remove(at: index)
             }
