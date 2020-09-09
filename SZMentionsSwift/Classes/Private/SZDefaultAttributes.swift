@@ -6,12 +6,12 @@
 //  Copyright © 2016 Steven Zweier. All rights reserved.
 //
 
-internal class SZDefaultAttributes {
+public class SZDefaultAttributes {
     /**
      @brief Default color
      */
     static var defaultColor: SZAttribute {
-        return SZAttribute(attributeName: NSForegroundColorAttributeName,
+        return SZAttribute(attributeName: NSAttributedString.Key.foregroundColor.rawValue,
                            attributeValue: UIColor.black)
     }
 
@@ -19,17 +19,17 @@ internal class SZDefaultAttributes {
      @brief Mention color
      */
     static var mentionColor: SZAttribute {
-        return SZAttribute(attributeName: NSForegroundColorAttributeName,
+        return SZAttribute(attributeName: NSAttributedString.Key.foregroundColor.rawValue,
                            attributeValue: UIColor.blue)
     }
 
     /**
      @brief the text attributes to be applied to default text (can be overridden using inits on SZMentionsListener)
      */
-    static var defaultTextAttributes: [SZAttribute] { return [defaultColor] }
+    public static var defaultTextAttributes: [SZAttribute] { return [defaultColor] }
 
     /**
      @brief the text attributes to be applied to mention text (can be overridden using inits on SZMentionsListener)
      */
-    static var defaultMentionAttributes: [SZAttribute] { return [mentionColor] }
+    public static var defaultMentionAttributes: [SZAttribute] { return [mentionColor] }
 }
